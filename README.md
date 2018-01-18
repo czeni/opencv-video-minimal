@@ -10,6 +10,8 @@ OpenCV with Python3.6 bindings and video support for video processing.
 The Docker image is based on the latest Alpine Linux 3.7 for a minimum size 
 image. It uses Alpine packages from testing and community repos.
 
+The OpenCV lib is compiled from source and contains no contrib modules.
+
 ### Configuration
 
 The OpenCV compiled from source with the following configurations:
