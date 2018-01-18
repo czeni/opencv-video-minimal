@@ -5,10 +5,7 @@ FROM alpine:3.7
 
 MAINTAINER Janos Czentye <czentye@tmit.bme.hu>
 
-ENV OPENCV_VERSION=3.4.0
 ENV LANG=C.UTF-8
-ENV CC=/usr/bin/clang
-ENV CXX=/usr/bin/clang++
 
 RUN echo -e "\n\
 @edge-main http://dl-cdn.alpinelinux.org/alpine/edge/main\n\
@@ -50,17 +47,19 @@ RUN apk add --update --no-cache \
 
     # Download OpenCV source
     cd /tmp && \
-    wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.tar.gz && \
-    tar -xvzf ${OPENCV_VERSION}.tar.gz && \
-    rm -vrf ${OPENCV_VERSION}.tar.gz && \
+    wget https://github.com/opencv/opencv/archive/3.4.0.tar.gz && \
+    tar -xvzf 3.4.0.tar.gz && \
+    rm -vrf 3.4.0.tar.gz && \
 
     # Configure
-    mkdir -vp /tmp/opencv-${OPENCV_VERSION}/build && \
-    cd /tmp/opencv-${OPENCV_VERSION}/build && \
+    mkdir -vp /tmp/opencv-3.4.0/build && \
+    cd /tmp/opencv-3.4.0/build && \
     cmake \
 
         # Compiler params
         -D CMAKE_BUILD_TYPE=RELEASE \
+        -D CMAKE_C_COMPILER=/usr/bin/clang \
+        -D CMAKE_CXX_COMPILER=/usr/bin/clang++ \
         -D CMAKE_INSTALL_PREFIX=/usr \
 
         # No examples
@@ -88,6 +87,7 @@ RUN apk add --update --no-cache \
 
         # Build Python3 bindings only
         -D PYTHON3_LIBRARY=`find /usr -name libpython3.so` \
+        -D PYTHON_EXECUTABLE=`which python3` \
         -D PYTHON3_EXECUTABLE=`which python3` \
         -D BUILD_opencv_python3=YES .. && \
 
@@ -96,7 +96,7 @@ RUN apk add --update --no-cache \
     make install && \
 
     # Cleanup
-    cd / && rm -vrf /tmp/opencv-${OPENCV_VERSION} && \
+    cd / && rm -vrf /tmp/opencv-3.4.0 && \
     apk del --purge build-base clang clang-dev cmake pkgconf wget openblas-dev \
                     openexr-dev gstreamer-dev gst-plugins-base-dev libgphoto2-dev \
                     libtbb-dev libjpeg-turbo-dev libpng-dev tiff-dev jasper-dev \
