@@ -21,19 +21,21 @@ RUN apk add --update --no-cache \
     # Build dependencies
     build-base clang clang-dev cmake pkgconf wget openblas openblas-dev \
     linux-headers \
-
     # Image IO packages
     libtbb@edge-testing libtbb-dev@edge-testing \
-    libjpeg libjpeg-turbo-dev \
+    libjpeg-turbo libjpeg-turbo-dev \
     libpng libpng-dev \
     libwebp libwebp-dev \
     tiff tiff-dev \
-    jasper jasper-dev \
+    jasper-libs jasper-dev \
+    openexr openexr-dev \
 
     # Video depepndencies
     ffmpeg-libs ffmpeg-dev \
-    lcms2 lcms2-dev \
     libavc1394 libavc1394-dev \
+    gstreamer gstreamer-dev \
+    gst-plugins-base gst-plugins-base-dev \
+    libgphoto2 libgphoto2-dev \
 
     # Python dependencies
     python3@edge-main python3-dev@edge-main \
@@ -42,6 +44,9 @@ RUN apk add --update --no-cache \
     # Make Python3 as default
     ln -s /usr/bin/python3 /usr/local/bin/python && \
     ln -s /usr/bin/pip3 /usr/local/bin/pip && \
+
+    # Fix libpng path
+    ln -s /usr/include/libpng16 /usr/include/libpng && \
 
     # Download OpenCV source
     cd /tmp && \
@@ -64,12 +69,15 @@ RUN apk add --update --no-cache \
 
         # Support
         -D WITH_IPP=NO \
-        -D WITH_OPENEXR=NO \
         -D WITH_1394=NO \
+        -D WITH_LIBV4L=NO \
+        -D WITH_V4l=YES \
         -D WITH_TBB=YES \
         -D WITH_FFMPEG=YES \
+        -D WITH_GPHOTO2=YES \
+        -D WITH_GSTREAMER=YES \
 
-        # NO dosc test and other bindings
+        # NO doc test and other bindings
         -D BUILD_DOCS=NO \
         -D BUILD_TESTS=NO \
         -D BUILD_PERF_TESTS=NO \
@@ -90,7 +98,7 @@ RUN apk add --update --no-cache \
     # Cleanup
     cd / && rm -vrf /tmp/opencv-${OPENCV_VERSION} && \
     apk del --purge build-base clang clang-dev cmake pkgconf wget openblas-dev \
-                    libtbb-dev libjpeg-turbo-dev libpng-dev tiff-dev \
-                    jasper-dev ffmpeg-dev lcms2-dev libavc1394-dev \
-                    python3-dev py-numpy-dev && \
+                    openexr-dev gstreamer-dev gst-plugins-base-dev libgphoto2-dev \
+                    libtbb-dev libjpeg-turbo-dev libpng-dev tiff-dev jasper-dev \
+                    ffmpeg-dev libavc1394-dev python3-dev py-numpy-dev && \
     rm -vrf /var/cache/apk/*
