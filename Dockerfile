@@ -1,5 +1,5 @@
 ################################################################################
-##  Dockerfile to build minimal OpenCV image with Python3 and FFMPEG support  ##
+##  Dockerfile to build minimal OpenCV image with Python3 and Video support   ##
 ################################################################################
 FROM alpine:3.7
 
