@@ -39,11 +39,13 @@ RUN apk add --update --no-cache \
     py-numpy@edge-community py-numpy-dev@edge-community && \
 
     # Make Python3 as default
-    ln -s /usr/bin/python3 /usr/local/bin/python && \
-    ln -s /usr/bin/pip3 /usr/local/bin/pip && \
+    ln -fs /usr/bin/python3 /usr/local/bin/python && \
+    ln -fs /usr/bin/pip3 /usr/local/bin/pip && \
 
     # Fix libpng path
-    ln -s /usr/include/libpng16 /usr/include/libpng && \
+    ln -fs /usr/include/libpng16 /usr/include/libpng && \
+
+    ln -fs /usr/include/locale.h /usr/include/xlocale.h && \
 
     # Download OpenCV source
     cd /tmp && \
