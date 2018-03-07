@@ -7,19 +7,12 @@ MAINTAINER Janos Czentye <czentye@tmit.bme.hu>
 
 ENV LANG=C.UTF-8
 
-RUN echo -e "\n\
-@edge-main http://dl-cdn.alpinelinux.org/alpine/edge/main\n\
-@edge-testing http://dl-cdn.alpinelinux.org/alpine/edge/testing\n\
-@edge-community http://dl-cdn.alpinelinux.org/alpine/edge/community" \
->> /etc/apk/repositories
-
 RUN apk add --update --no-cache \
 
     # Build dependencies
     build-base clang clang-dev cmake pkgconf wget openblas openblas-dev \
     linux-headers \
     # Image IO packages
-    libtbb@edge-testing libtbb-dev@edge-testing \
     libjpeg-turbo libjpeg-turbo-dev \
     libpng libpng-dev \
     libwebp libwebp-dev \
@@ -32,20 +25,25 @@ RUN apk add --update --no-cache \
     libavc1394 libavc1394-dev \
     gstreamer gstreamer-dev \
     gst-plugins-base gst-plugins-base-dev \
-    libgphoto2 libgphoto2-dev \
+    libgphoto2 libgphoto2-dev && \
+
+    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+            --update --no-cache libtbb libtbb-dev && \
 
     # Python dependencies
-    python3@edge-main python3-dev@edge-main \
-    py-numpy@edge-community py-numpy-dev@edge-community && \
+    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+            --update --no-cache python3 python3-dev && \
+
+    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+            --update --no-cachepy-numpy py-numpy-dev && \
 
     # Make Python3 as default
-    ln -fs /usr/bin/python3 /usr/local/bin/python && \
-    ln -fs /usr/bin/pip3 /usr/local/bin/pip && \
-
+    ln -vfs /usr/bin/python3 /usr/local/bin/python && \
+    ln -vfs /usr/bin/pip3 /usr/local/bin/pip && \
     # Fix libpng path
-    ln -fs /usr/include/libpng16 /usr/include/libpng && \
+    ln -vfs /usr/include/libpng16 /usr/include/libpng && \
 
-    ln -fs /usr/include/locale.h /usr/include/xlocale.h && \
+    ln -vfs /usr/include/locale.h /usr/include/xlocale.h && \
 
     # Download OpenCV source
     cd /tmp && \
