@@ -82,8 +82,8 @@ The OpenCV compiled from source with the following configurations:
 --     Link libraries:              Dynamic load
 -- 
 --   Python 3:
---     Interpreter:                 /usr/bin/python3 (ver 3.6.3)
---     Libraries:                   /usr/lib/libpython3.so (ver 3.6.3)
+--     Interpreter:                 /usr/bin/python3 (ver 3.6.4)
+--     Libraries:                   /usr/lib/libpython3.so (ver 3.6.4)
 --     numpy:                       /usr/lib/python3.6/site-packages/numpy/core/include (ver 1.13.3)
 --     packages path:               lib/python3.6/site-packages
 -- 
