@@ -35,7 +35,7 @@ RUN apk add --update --no-cache \
             --update --no-cache python3 python3-dev && \
 
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
-            --update --no-cachepy-numpy py-numpy-dev && \
+            --update --no-cache py-numpy py-numpy-dev && \
 
     # Make Python3 as default
     ln -vfs /usr/bin/python3 /usr/local/bin/python && \
