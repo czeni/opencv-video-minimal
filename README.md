@@ -1,13 +1,13 @@
 # OpenCV 3.4 with Python3.6 and video support
 
-2018 March
+2018 July
 
 ### Description
 
 This repository provides a Dockerfile for building an image for the latest 
 OpenCV with Python3.6 bindings and video support for video processing.
 
-The Docker image is based on the latest Alpine Linux 3.7 for a minimum size 
+The Docker image is based on the latest Alpine Linux 3.8 for a minimum size 
 image (~217MB). It uses Alpine packages from testing and community repos.
 
 The OpenCV lib is compiled from source and contains no contrib modules.
@@ -104,3 +104,4 @@ The OpenCV compiled from source with the following configurations:
 ### Download
 
 To get the image use ``sudo docker pull czentye/opencv-video-minimal``
+
