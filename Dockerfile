@@ -39,12 +39,12 @@ RUN apk add --update --no-cache \
     ln -vfs /usr/include/locale.h /usr/include/xlocale.h && \
     # Download OpenCV source
     cd /tmp && \
-    wget https://github.com/opencv/opencv/archive/3.4.0.tar.gz && \
-    tar -xvzf 3.4.0.tar.gz && \
-    rm -vrf 3.4.0.tar.gz && \
+    wget https://github.com/opencv/opencv/archive/3.4.2.tar.gz && \
+    tar -xvzf 3.4.2.tar.gz && \
+    rm -vrf 3.4.2.tar.gz && \
     # Configure
-    mkdir -vp /tmp/opencv-3.4.0/build && \
-    cd /tmp/opencv-3.4.0/build && \
+    mkdir -vp /tmp/opencv-3.4.2/build && \
+    cd /tmp/opencv-3.4.2/build && \
     cmake \
         # Compiler params
         -D CMAKE_BUILD_TYPE=RELEASE \
@@ -80,7 +80,7 @@ RUN apk add --update --no-cache \
     make -j`grep -c '^processor' /proc/cpuinfo` && \
     make install && \
     # Cleanup
-    cd / && rm -vrf /tmp/opencv-3.4.0 && \
+    cd / && rm -vrf /tmp/opencv-3.4.2 && \
     apk del --purge build-base clang clang-dev cmake pkgconf wget openblas-dev \
                     openexr-dev gstreamer-dev gst-plugins-base-dev libgphoto2-dev \
                     libtbb-dev libjpeg-turbo-dev libpng-dev tiff-dev jasper-dev \
