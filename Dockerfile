@@ -26,7 +26,7 @@ RUN apk add --update --no-cache \
     gstreamer gstreamer-dev \
     gst-plugins-base gst-plugins-base-dev \
     libgphoto2 libgphoto2-dev && \
-    apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/testing \
+    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             --update --no-cache libtbb libtbb-dev && \
     # Python dependencies
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/main \
