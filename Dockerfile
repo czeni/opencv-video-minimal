@@ -26,12 +26,12 @@ RUN apk add --update --no-cache \
     gstreamer gstreamer-dev \
     gst-plugins-base gst-plugins-base-dev \
     libgphoto2 libgphoto2-dev && \
-    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+    apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/testing \
             --update --no-cache libtbb libtbb-dev && \
     # Python dependencies
-    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+    apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/main \
             --update --no-cache python3 python3-dev && \
-    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+    apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/community \
             --update --no-cache py-numpy py-numpy-dev && \
     # Make Python3 as default
     ln -vfs /usr/bin/python3 /usr/local/bin/python && \
