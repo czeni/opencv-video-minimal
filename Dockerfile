@@ -7,7 +7,7 @@ MAINTAINER Janos Czentye <czentye@tmit.bme.hu>
 
 ENV LANG=C.UTF-8
 
-ARG OPENCV_VERSION=3.4.3
+ARG OPENCV_VERSION=3.4.4
 
 RUN apk add --update --no-cache \
     # Build dependencies
