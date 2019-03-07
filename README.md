@@ -1,4 +1,4 @@
-# OpenCV 3.4.2 with Python3.6.8 and video support
+# OpenCV 4.0.0 with Python3.6.8 and video support
 
 2019 March
 
