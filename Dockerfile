@@ -29,9 +29,9 @@ RUN apk add --update --no-cache \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             --update --no-cache libtbb libtbb-dev && \
     # Python dependencies
-    apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/main \
+    apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.9/main \
             --update --no-cache python3 python3-dev && \
-    apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/community \
+    apk add --repository http://dl-cdn.alpinelinux.org/alpine/v3.9/community \
             --update --no-cache py-numpy py-numpy-dev && \
     # Make Python3 as default
     ln -vfs /usr/bin/python3 /usr/local/bin/python && \
