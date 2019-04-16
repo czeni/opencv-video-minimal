@@ -1,4 +1,4 @@
-# OpenCV 4.0.1 with Python3.6.8 and video support
+# OpenCV 4.1.0 with Python3.6.8 and video support
 
 [![](https://img.shields.io/docker/build/czentye/opencv-video-minimal.svg?style=popout)](https://hub.docker.com/r/czentye/opencv-video-minimal)
 [![](https://img.shields.io/docker/pulls/czentye/opencv-video-minimal.svg?style=popout)](https://hub.docker.com/r/czentye/opencv-video-minimal)
