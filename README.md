@@ -6,14 +6,14 @@
 
 János Czentye, HSNLab@BME
 
-2019 March
+2019 April
 
 ### Description
 
 This repository provides a Dockerfile for building an image for the latest 
 OpenCV with Python3.6 bindings and video support for video processing.
 
-The Docker image is based on the latest Alpine Linux 3.9.2 for a minimum size 
+The Docker image is based on the latest Alpine Linux 3.9.3 for a minimum size 
 image (~217MB). It uses Alpine packages from testing and community repos.
 
 https://alpinelinux.org
