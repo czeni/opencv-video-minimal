@@ -33,8 +33,8 @@ The OpenCV compiled from source with the following configurations:
 --   Version control:               unknown
 -- 
 --   Platform:
---     Timestamp:                   2019-04-27T12:54:12Z
---     Host:                        Linux 4.18.0-17-generic x86_64
+--     Timestamp:                   2019-05-17T08:59:11Z
+--     Host:                        Linux 4.18.0-20-generic x86_64
 --     CMake:                       3.13.0
 --     CMake generator:             Unix Makefiles
 --     CMake build tool:            /usr/bin/make
@@ -43,7 +43,6 @@ The OpenCV compiled from source with the following configurations:
 --   C/C++:
 --     Built as dynamic libs?:      YES
 --     C++ Compiler:                /usr/bin/clang++  (ver 5.0.1)
---     C Compiler:                  /usr/bin/clang
 --     Linker flags (Release):      -Wl,--gc-sections  
 --     Linker flags (Debug):        -Wl,--gc-sections  
 --     ccache:                      NO
@@ -68,7 +67,7 @@ The OpenCV compiled from source with the following configurations:
 --     ZLib:                        /lib/libz.so (ver 1.2.11)
 --     JPEG:                        /usr/lib/libjpeg.so (ver 80)
 --     WEBP:                        /usr/lib/libwebp.so (ver encoder: 0x020e)
---     PNG:                         /usr/lib/libpng.so (ver 1.6.35)
+--     PNG:                         /usr/lib/libpng.so (ver 1.6.37)
 --     TIFF:                        /usr/lib/libtiff.so (ver 42 / 4.0.10)
 --     JPEG 2000:                   /usr/lib/libjasper.so (ver 2.0.14)
 --     OpenEXR:                     /usr/lib/libImath.so /usr/lib/libIlmImf.so /usr/lib/libIex.so /usr/lib/libHalf.so /usr/lib/libIlmThread.so (ver 2.2.1)
@@ -105,7 +104,7 @@ The OpenCV compiled from source with the following configurations:
 --   Python 3:
 --     Interpreter:                 /usr/bin/python3 (ver 3.7.3)
 --     Libraries:                   /usr/lib/libpython3.so (ver 3.7.3)
---     numpy:                       /usr/lib/python3.7/site-packages/numpy/core/include (ver 1.16.2)
+--     numpy:                       /usr/lib/python3.7/site-packages/numpy/core/include (ver 1.16.3)
 --     install path:                lib/python3.7/site-packages/cv2/python-3.7
 -- 
 --   Python (for build):            /usr/bin/python3
