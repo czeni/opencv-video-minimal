@@ -6,14 +6,14 @@
 
 János Czentye, HSNLab@BME
 
-2019 April
+2019 June
 
 ### Description
 
 This repository provides a Dockerfile for building an image for the latest 
 OpenCV with Python3.7 bindings and video support for video processing.
 
-The Docker image is based on the latest Alpine Linux 3.9 for a minimum size 
+The Docker image is based on the latest Alpine Linux 3.10 for a minimum size 
 image (~217MB). It uses Alpine packages from testing and community repos.
 
 https://alpinelinux.org
@@ -33,16 +33,16 @@ The OpenCV compiled from source with the following configurations:
 --   Version control:               unknown
 -- 
 --   Platform:
---     Timestamp:                   2019-05-17T08:59:11Z
---     Host:                        Linux 4.18.0-20-generic x86_64
---     CMake:                       3.13.0
+--     Timestamp:                   2019-06-24T08:33:20Z
+--     Host:                        Linux 4.18.0-22-generic x86_64
+--     CMake:                       3.14.5
 --     CMake generator:             Unix Makefiles
 --     CMake build tool:            /usr/bin/make
 --     Configuration:               RELEASE
 -- 
 --   C/C++:
 --     Built as dynamic libs?:      YES
---     C++ Compiler:                /usr/bin/clang++  (ver 5.0.1)
+--     C++ Compiler:                /usr/bin/clang++  (ver 8.0.0)
 --     Linker flags (Release):      -Wl,--gc-sections  
 --     Linker flags (Debug):        -Wl,--gc-sections  
 --     ccache:                      NO
@@ -69,7 +69,7 @@ The OpenCV compiled from source with the following configurations:
 --     WEBP:                        /usr/lib/libwebp.so (ver encoder: 0x020e)
 --     PNG:                         /usr/lib/libpng.so (ver 1.6.37)
 --     TIFF:                        /usr/lib/libtiff.so (ver 42 / 4.0.10)
---     JPEG 2000:                   /usr/lib/libjasper.so (ver 2.0.14)
+--     JPEG 2000:                   /usr/lib/libjasper.so (ver 2.0.16)
 --     OpenEXR:                     /usr/lib/libImath.so /usr/lib/libIlmImf.so /usr/lib/libIex.so /usr/lib/libHalf.so /usr/lib/libIlmThread.so (ver 2.2.1)
 --     HDR:                         YES
 --     SUNRASTER:                   YES
@@ -78,12 +78,12 @@ The OpenCV compiled from source with the following configurations:
 -- 
 --   Video I/O:
 --     FFMPEG:                      YES
---       avcodec:                   YES (58.18.100)
---       avformat:                  YES (58.12.100)
---       avutil:                    YES (56.14.100)
---       swscale:                   YES (5.1.100)
+--       avcodec:                   YES (58.35.100)
+--       avformat:                  YES (58.20.100)
+--       avutil:                    YES (56.22.100)
+--       swscale:                   YES (5.3.100)
 --       avresample:                YES (4.0.0)
---     GStreamer:                   YES (1.14.4)
+--     GStreamer:                   YES (1.16.0)
 --     v4l/v4l2:                    YES (linux/videodev2.h)
 --     gPhoto2:                     YES
 -- 
@@ -104,7 +104,7 @@ The OpenCV compiled from source with the following configurations:
 --   Python 3:
 --     Interpreter:                 /usr/bin/python3 (ver 3.7.3)
 --     Libraries:                   /usr/lib/libpython3.so (ver 3.7.3)
---     numpy:                       /usr/lib/python3.7/site-packages/numpy/core/include (ver 1.16.3)
+--     numpy:                       /usr/lib/python3.7/site-packages/numpy/core/include (ver 1.16.4)
 --     install path:                lib/python3.7/site-packages/cv2/python-3.7
 -- 
 --   Python (for build):            /usr/bin/python3
