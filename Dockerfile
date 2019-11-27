@@ -25,11 +25,11 @@ RUN apk add --update --no-cache \
     libavc1394 libavc1394-dev \
     gstreamer gstreamer-dev \
     gst-plugins-base gst-plugins-base-dev \
-    libgphoto2 libgphoto2-dev && \
+    libgphoto2 libgphoto2-dev \
+    python3 python3-dev && \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             --update --no-cache libtbb libtbb-dev && \
     # Python dependencies
-    apk add --update --no-cache python3 python3-dev && \
     # Do not use buggy Python3.8
     #apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
     #        --update --no-cache python3 python3-dev && \
