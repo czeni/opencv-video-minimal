@@ -29,12 +29,14 @@ RUN apk add --update --no-cache \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             --update --no-cache libtbb libtbb-dev && \
     # Python dependencies
-    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-            --update --no-cache python3 python3-dev && \
+    apk add --update --no-cache python3 python3-dev && \
+    # Do not use buggy Python3.8
+    #apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+    #        --update --no-cache python3 python3-dev && \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
             --update --no-cache py-numpy py-numpy-dev && \
     # Avoid Alpine bug
-    apk upgrade musl && \
+    #apk upgrade musl && \
     # Make Python3 as default
     ln -vfs /usr/bin/python3 /usr/local/bin/python && \
     ln -vfs /usr/bin/pip3 /usr/local/bin/pip && \
