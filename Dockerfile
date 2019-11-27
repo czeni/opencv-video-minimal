@@ -26,13 +26,11 @@ RUN apk add --update --no-cache \
     gstreamer gstreamer-dev \
     gst-plugins-base gst-plugins-base-dev \
     libgphoto2 libgphoto2-dev \
-    python3 python3-dev && \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             --update --no-cache libtbb libtbb-dev && \
     # Python dependencies
-    # Do not use buggy Python3.8
-    #apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-    #        --update --no-cache python3 python3-dev && \
+    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+            --update --no-cache python3 python3-dev musl && \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
             --update --no-cache py-numpy py-numpy-dev && \
     # Avoid Alpine bug
