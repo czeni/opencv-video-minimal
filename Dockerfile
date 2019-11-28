@@ -25,16 +25,15 @@ RUN apk add --update --no-cache \
     libavc1394 libavc1394-dev \
     gstreamer gstreamer-dev \
     gst-plugins-base gst-plugins-base-dev \
-    libgphoto2 libgphoto2-dev \
+    libgphoto2 libgphoto2-dev && \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             --update --no-cache libtbb libtbb-dev && \
     # Python dependencies
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+            # Update also musl to avoid an Alpine bug
             --update --no-cache python3 python3-dev musl && \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
             --update --no-cache py-numpy py-numpy-dev && \
-    # Avoid Alpine bug
-    #apk upgrade musl && \
     # Make Python3 as default
     ln -vfs /usr/bin/python3 /usr/local/bin/python && \
     ln -vfs /usr/bin/pip3 /usr/local/bin/pip && \
