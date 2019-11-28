@@ -1,4 +1,4 @@
-# OpenCV 4.1.2 with Python3.7 and video support
+# OpenCV 4.1.2 with Python3.8 and video support
 
 [![](https://img.shields.io/docker/build/czentye/opencv-video-minimal.svg?style=popout)](https://hub.docker.com/r/czentye/opencv-video-minimal)
 [![](https://img.shields.io/docker/pulls/czentye/opencv-video-minimal.svg?style=popout)](https://hub.docker.com/r/czentye/opencv-video-minimal)
@@ -11,7 +11,7 @@ János Czentye, HSNLab@BME
 ### Description
 
 This repository provides a Dockerfile for building an image for the latest 
-OpenCV with Python3.7 bindings and video support for video processing.
+OpenCV with Python3.8 bindings and video support for video processing.
 
 The Docker image is based on the latest Alpine Linux 3.10 for a minimum size 
 image (~217MB). It uses Alpine packages from testing and community repos.
