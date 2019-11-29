@@ -42,7 +42,7 @@ RUN apk add --update --no-cache \
     ln -vfs /usr/include/libpng16 /usr/include/libpng && \
     ln -vfs /usr/include/locale.h /usr/include/xlocale.h && \
     pip3 install -v --no-cache-dir --upgrade pip && \
-    pip3 install -v --no-cache-dir numpy
+    pip3 install -v --no-cache-dir numpy && \
     # Download OpenCV source
     cd /tmp && \
     wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz && \
