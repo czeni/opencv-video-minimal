@@ -25,21 +25,24 @@ RUN apk add --update --no-cache \
     libavc1394 libavc1394-dev \
     gstreamer gstreamer-dev \
     gst-plugins-base gst-plugins-base-dev \
-    libgphoto2 libgphoto2-dev && \
+    libgphoto2 libgphoto2-dev \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             --update --no-cache libtbb libtbb-dev && \
     # Python dependencies
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-            # Update also musl to avoid an Alpine bug
-            --update --no-cache python3 python3-dev musl && \
-    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
-            --update --no-cache py-numpy py-numpy-dev && \
+            --update --no-cache python3 python3-dev && \
+    #apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+    #        --update --no-cache py-numpy py-numpy-dev && \
+    # Update also musl to avoid an Alpine bug
+    apk upgrade --repository http://dl-cdn.alpinelinux.org/alpine/edge/main musl && \
     # Make Python3 as default
     ln -vfs /usr/bin/python3 /usr/local/bin/python && \
     ln -vfs /usr/bin/pip3 /usr/local/bin/pip && \
     # Fix libpng path
     ln -vfs /usr/include/libpng16 /usr/include/libpng && \
     ln -vfs /usr/include/locale.h /usr/include/xlocale.h && \
+    pip3 install -v --no-cache-dir --upgrade pip && \
+    pip3 install -v --no-cache-dir numpy
     # Download OpenCV source
     cd /tmp && \
     wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz && \
@@ -87,5 +90,5 @@ RUN apk add --update --no-cache \
     apk del --purge build-base clang clang-dev cmake pkgconf wget openblas-dev \
                     openexr-dev gstreamer-dev gst-plugins-base-dev libgphoto2-dev \
                     libtbb-dev libjpeg-turbo-dev libpng-dev tiff-dev jasper-dev \
-                    ffmpeg-dev libavc1394-dev python3-dev py-numpy-dev && \
+                    ffmpeg-dev libavc1394-dev python3-dev && \
     rm -vrf /var/cache/apk/*
