@@ -33,16 +33,22 @@ The OpenCV compiled from source with the following configurations:
 --   Version control:               unknown
 -- 
 --   Platform:
---     Timestamp:                   2019-11-27T15:42:34Z
+--     Timestamp:                   2019-11-30T12:32:54Z
 --     Host:                        Linux 4.15.0-70-generic x86_64
---     CMake:                       3.14.5
+--     CMake:                       3.15.5
 --     CMake generator:             Unix Makefiles
 --     CMake build tool:            /usr/bin/make
 --     Configuration:               RELEASE
 -- 
 --   C/C++:
 --     Built as dynamic libs?:      YES
---     C++ Compiler:                /usr/bin/clang++  (ver 8.0.0)
+--     C++ Compiler:                /usr/bin/clang++  (ver 9.0.0)
+--     Linker flags (Release):      -Wl,--gc-sections
+--     Linker flags (Debug):        -Wl,--gc-sections
+--     ccache:                      NO
+--     Precompiled headers:         NO
+--     Extra dependencies:          dl m pthread rt
+--     3rdparty dependencies:
 -- 
 --   OpenCV modules:
 --     To be built:                 calib3d core dnn features2d flann gapi highgui imgcodecs imgproc ml objdetect photo python3 stitching video videoio
@@ -62,7 +68,7 @@ The OpenCV compiled from source with the following configurations:
 --     JPEG:                        /usr/lib/libjpeg.so (ver 80)
 --     WEBP:                        /usr/lib/libwebp.so (ver encoder: 0x020e)
 --     PNG:                         /usr/lib/libpng.so (ver 1.6.37)
---     TIFF:                        /usr/lib/libtiff.so (ver 42 / 4.0.10)
+--     TIFF:                        /usr/lib/libtiff.so (ver 42 / 4.1.0)
 --     JPEG 2000:                   /usr/lib/libjasper.so (ver 2.0.16)
 --     OpenEXR:                     /usr/lib/libImath.so /usr/lib/libIlmImf.so /usr/lib/libIex.so /usr/lib/libHalf.so /usr/lib/libIlmThread.so (ver 2.2.1)
 --     HDR:                         YES
@@ -77,7 +83,7 @@ The OpenCV compiled from source with the following configurations:
 --       avutil:                    YES (56.22.100)
 --       swscale:                   YES (5.3.100)
 --       avresample:                YES (4.0.0)
---     GStreamer:                   YES (1.16.0)
+--     GStreamer:                   YES (1.16.1)
 --     v4l/v4l2:                    YES (linux/videodev2.h)
 --     gPhoto2:                     YES
 -- 
@@ -96,16 +102,15 @@ The OpenCV compiled from source with the following configurations:
 --     Link libraries:              Dynamic load
 -- 
 --   Python 3:
---     Interpreter:                 /usr/bin/python3 (ver 3.7.5)
---     Libraries:                   /usr/lib/libpython3.so (ver 3.7.5)
---     numpy:                       /usr/lib/python3.7/site-packages/numpy/core/include (ver 1.16.4)
---     install path:                lib/python3.7/site-packages/cv2/python-3.7
+--     Interpreter:                 /usr/bin/python3 (ver 3.8)
+--     Libraries:                   /usr/lib/libpython3.so (ver 3.8.0)
+--     numpy:                       /usr/lib/python3.8/site-packages/numpy/core/include (ver 1.17.4)
+--     install path:                lib/python3.8/site-packages/cv2/python-3.8
 -- 
 --   Python (for build):            /usr/bin/python3
 -- 
 --   Install to:                    /usr
 -- -----------------------------------------------------------------
-
 ```
 
 ### Download
