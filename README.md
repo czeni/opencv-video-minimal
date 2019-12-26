@@ -1,4 +1,4 @@
-# OpenCV 4.1.2 with Python3.8 and video support
+# OpenCV 4.2.0 with Python3.8 and video support
 
 [![](https://img.shields.io/docker/build/czentye/opencv-video-minimal.svg?style=popout)](https://hub.docker.com/r/czentye/opencv-video-minimal)
 [![](https://img.shields.io/docker/pulls/czentye/opencv-video-minimal.svg?style=popout)](https://hub.docker.com/r/czentye/opencv-video-minimal)
@@ -6,7 +6,7 @@
 
 János Czentye, HSNLab@BME
 
-2019 November
+2019 December
 
 ### Description
 
