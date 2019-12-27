@@ -1,7 +1,7 @@
 ################################################################################
 ##  Dockerfile to build minimal OpenCV img with Python3.7 and Video support   ##
 ################################################################################
-FROM alpine:latest
+FROM alpine:3.10
 
 MAINTAINER Janos Czentye <czentye@tmit.bme.hu>
 
@@ -29,8 +29,7 @@ RUN apk add --update --no-cache \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             --update --no-cache libtbb libtbb-dev && \
     # Python dependencies
-    apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-            --update --no-cache python3 python3-dev && \
+    apk add --update --no-cache python3 python3-dev && \
     #apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
     #        --update --no-cache py-numpy py-numpy-dev && \
     # Update also musl to avoid an Alpine bug
