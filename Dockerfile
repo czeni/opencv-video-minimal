@@ -1,7 +1,7 @@
 ################################################################################
 ##  Dockerfile to build minimal OpenCV img with Python3.7 and Video support   ##
 ################################################################################
-FROM alpine:3.10
+FROM alpine:latest
 
 MAINTAINER Janos Czentye <czentye@tmit.bme.hu>
 
