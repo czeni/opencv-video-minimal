@@ -29,7 +29,7 @@ RUN apk add --update --no-cache \
     apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
             --update --no-cache libtbb libtbb-dev && \
     # Python dependencies
-    apk add --update --no-cache python3 python3-dev && \
+    apk add --no-cache python3=3.7.5-r1 python3-dev=3.7.5-r1 && \
     #apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
     #        --update --no-cache py-numpy py-numpy-dev && \
     # Update also musl to avoid an Alpine bug
