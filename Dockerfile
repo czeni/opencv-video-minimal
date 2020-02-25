@@ -81,6 +81,7 @@ RUN apk add --update --no-cache \
         -D PYTHON3_LIBRARY=`find /usr -name libpython3.so` \
         -D PYTHON_EXECUTABLE=`which python3` \
         -D PYTHON3_EXECUTABLE=`which python3` \
+        -D OPENCV_GENERATE_PKGCONFIG=ON \
         -D BUILD_opencv_python3=YES .. && \
     # Build
     make -j`grep -c '^processor' /proc/cpuinfo` && \
