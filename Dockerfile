@@ -9,6 +9,8 @@ ENV LANG=C.UTF-8
 
 ARG OPENCV_VERSION=4.2.0
 
+ENV PKG_CONFIG_PATH /usr/local/lib64/pkgconfig
+
 RUN apk add --update --no-cache \
     # Build dependencies
     build-base clang clang-dev cmake pkgconf wget openblas openblas-dev \
