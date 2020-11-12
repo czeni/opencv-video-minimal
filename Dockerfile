@@ -9,6 +9,9 @@ ENV LANG=C.UTF-8
 
 ARG OPENCV_VERSION=4.2.0
 
+ENV PKG_CONFIG_PATH /usr/local/lib64/pkgconfig
+ENV LD_LIBRARY_PATH /usr/local/lib64/:/usr/local/include/
+
 RUN apk add --update --no-cache \
     # Build dependencies
     build-base clang clang-dev cmake pkgconf wget openblas openblas-dev \
@@ -81,10 +84,12 @@ RUN apk add --update --no-cache \
         -D PYTHON3_LIBRARY=`find /usr -name libpython3.so` \
         -D PYTHON_EXECUTABLE=`which python3` \
         -D PYTHON3_EXECUTABLE=`which python3` \
+        -D OPENCV_GENERATE_PKGCONFIG=ON \
         -D BUILD_opencv_python3=YES .. && \
     # Build
     make -j`grep -c '^processor' /proc/cpuinfo` && \
     make install && \
+    ln -s /usr/local/include/opencv4/opencv2/ /usr/local/include/opencv2 && \
     # Cleanup
     cd / && rm -vrf /tmp/opencv-$OPENCV_VERSION && \
     apk del --purge build-base clang clang-dev cmake pkgconf wget openblas-dev \
