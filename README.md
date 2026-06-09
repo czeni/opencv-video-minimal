@@ -8,6 +8,11 @@ János Czentye, HSNLab@BME
 
 2019 December
 
+## Note 
+
+> [!IMPORTANT]
+> This repo and docker image is no longer maintained due to lack of free time.
+
 ### Description
 
 This repository provides a Dockerfile for building an image for the latest 
